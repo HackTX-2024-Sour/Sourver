@@ -2,6 +2,9 @@ import iris
 import os
 import sys
 from pipeline import pipeline
+from pipeline import load_models
+
+from pipeline import show_img
 
 # Login Info
 username = "demo"
@@ -49,24 +52,29 @@ def create_empty_table(reset):
 def server_setup(reset=False):
     connect()
     create_empty_table(reset)
+    load_models()
 
 
 def add_face(fname : str, lname : str, base64_str : str):
     vector = None
     try:
-        vector, _ = pipeline(base64_str)
+        vector, img = pipeline(base64_str)
+        # show_img(img)
     except Exception as e:
         print(e, file=sys.stderr)
-        return None
+        return -1
     
     sql = f"INSERT INTO {table_name} (type, fname, lname, img_vector) values (?, ?, ?, TO_VECTOR(?))"
     data = (object_type, fname, lname, str(vector))
     cursor.execute(sql, data)
 
+    return 0
+
 def search_face(base64_str: str, num_results=1):
     vector = None
     try:
-        vector, _ = pipeline(base64_str)
+        vector, img = pipeline(base64_str)
+        # show_img(img)
     except Exception as e:
         print(e, file=sys.stderr)
         return None
