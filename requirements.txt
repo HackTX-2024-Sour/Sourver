@@ -6,7 +6,6 @@ filelock==3.16.1
 fonttools==4.54.1
 fsspec==2024.10.0
 idna==3.10
-intersystems_irispython @ file:///home/hacktx/HackTX/Sourver/api/intersystems_irispython-5.0.1-8026-cp38.cp39.cp310.cp311.cp312-cp38.cp39.cp310.cp311.cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=56fbf9a85b06bd402557b27b9bd8062c8753925845267af4e459626d86848b90
 Jinja2==3.1.4
 kiwisolver==1.4.7
 MarkupSafe==3.0.2
