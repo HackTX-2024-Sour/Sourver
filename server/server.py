@@ -62,7 +62,7 @@ def process_command(cmd):
     except:
         return "ERROR"
 
-def start_server(host='localhost', port=42069, reset=False):
+def start_server(host='0.0.0.0', port=42069, reset=False):
     
     database.server_setup(reset)
 
