@@ -73,13 +73,13 @@ anik_test = anik_pics[-1]
 caleb_test = caleb_pics[-1]
 vivek_test = vivek_pics[-1]
 
-send_array(anik_dir, anik_put, 'Anik', 'Patel')
-send_array(caleb_dir, caleb_put, 'Caleb', 'Devon')
-send_array(vivek_dir, vivek_put, 'Vivek', 'Keval')
+send_array(anik_dir, anik_pics, 'Anik', 'Patel')
+send_array(caleb_dir, caleb_pics, 'Caleb', 'Devon')
+send_array(vivek_dir, vivek_pics, 'Vivek', 'Keval')
 
-send_get(anik_dir + anik_test, 'Anik')
-send_get(caleb_dir + caleb_test, 'Caleb')
-send_get(vivek_dir + vivek_test, 'Vivek')
+# send_get(anik_dir + anik_test, 'Anik')
+# send_get(caleb_dir + caleb_test, 'Caleb')
+# send_get(vivek_dir + vivek_test, 'Vivek')
 
-shutdown()
+# shutdown()
 

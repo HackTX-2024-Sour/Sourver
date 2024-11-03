@@ -9,6 +9,7 @@ def receive_message(client):
         packet = client.recv(buffer)
         if not packet:
             break
+        # print(packet.decode())
         data += packet
         
     return data.decode()
@@ -91,4 +92,4 @@ def start_server(host='0.0.0.0', port=42069, reset=False):
 
         client_socket.close()
 
-start_server(reset=True)
+start_server(reset=False)
